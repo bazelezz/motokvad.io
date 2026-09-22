@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>МотоКвадроКлуб — квадроциклы, эндуро, туры</title>
+<meta name="description" content="Прокат квадроциклов, эндуро мотоциклов, питбайков и снегоходов в Подмосковье. Лобня, 6 км от города.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap');
+:root{--bg:#0b0d0d;--panel:#111514;--muted:#a8afab;--text:#f4f4ef;--lime:#d7ff3f;--orange:#ff6b2c;--line:#252b29;--max:1240px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Manrope,Arial,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}.wrap{width:min(calc(100% - 40px),var(--max));margin:auto}
+.noise{position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:50}
+header{position:fixed;top:0;left:0;right:0;z-index:40;background:linear-gradient(#080a0ae8,transparent);padding:20px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px}.logo{font-family:Oswald,sans-serif;font-size:22px;letter-spacing:1px;text-transform:uppercase}.logo span{color:var(--lime)}.menu{display:flex;gap:24px;color:#c8cdca;font-size:13px;font-weight:700}.menu a:hover{color:var(--lime)}.phone{font-weight:800;font-size:14px}
+.hero{min-height:820px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background:linear-gradient(90deg,#070909 0%,#070909a8 42%,#07090915 100%),url('https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=2200&q=85') center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,var(--bg))}
+.hero-content{position:relative;z-index:2;padding:150px 0 90px;max-width:880px}.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--lime);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.dot{width:7px;height:7px;background:var(--lime);border-radius:50%;box-shadow:0 0 20px var(--lime)}
+h1{font-family:Oswald,sans-serif;text-transform:uppercase;font-size:clamp(60px,9vw,132px);line-height:.86;margin:22px 0 28px;letter-spacing:-2px}.hero p{max-width:650px;color:#d3d7d4;font-size:18px;line-height:1.7;margin:0 0 34px}.actions{display:flex;gap:12px;flex-wrap:wrap}.btn{border:1px solid #38403d;background:#ffffff08;padding:15px 22px;border-radius:4px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.7px;cursor:pointer}.btn.primary{background:var(--lime);border-color:var(--lime);color:#0a0d0b}.btn:hover{transform:translateY(-2px)}
+.ticker{border-block:1px solid var(--line);padding:16px 0;overflow:hidden;white-space:nowrap;background:#0e1110}.ticker-track{display:inline-block;animation:marquee 24s linear infinite;font-family:Oswald;font-size:18px;text-transform:uppercase;letter-spacing:1px}.ticker span{color:var(--lime);margin:0 28px}@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:110px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:45px}.kicker{font-size:11px;color:var(--lime);font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}.section-title{font-family:Oswald;font-size:clamp(40px,5vw,70px);text-transform:uppercase;line-height:.95;margin:0}.section-copy{color:var(--muted);max-width:480px;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{min-height:470px;padding:28px;position:relative;overflow:hidden;border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;justify-content:flex-end}.card:before{content:"";position:absolute;inset:0;background:linear-gradient(transparent 25%,#050606e8 90%)}.card:nth-child(1){background:url('https://images.unsplash.com/photo-1558980664-10ea8d2a7e16?auto=format&fit=crop&w=1200&q=80') center/cover}.card:nth-child(2){background:url('https://images.unsplash.com/photo-1609630875171-b1321377ee65?auto=format&fit=crop&w=1200&q=80') center/cover}.card:nth-child(3){background:url('https://images.unsplash.com/photo-1558980394-0c2a6f7b0f3a?auto=format&fit=crop&w=1200&q=80') center/cover}.card-content{position:relative;z-index:2}.tag{display:inline-block;border:1px solid #ffffff36;padding:6px 8px;font-size:10px;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px}.card h3{font-family:Oswald;font-size:38px;text-transform:uppercase;margin:0 0 8px}.card p{color:#c1c6c3;line-height:1.55;margin:0 0 18px}.price{font-size:24px;font-weight:800;color:var(--lime)}
+.grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}.photo{min-height:620px;background:url('https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?auto=format&fit=crop&w=1600&q=85') center/cover;position:relative}.photo:after{content:"MOTO / QUADRO / CLUB";position:absolute;bottom:24px;left:24px;font-family:Oswald;font-size:28px;letter-spacing:1px}.facts{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line);margin-top:35px}.fact{padding:22px 15px 22px 0;border-bottom:1px solid var(--line)}.fact b{font-family:Oswald;font-size:35px;color:var(--lime);display:block}.fact small{color:var(--muted)}
+.feature-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}.feature{background:var(--panel);padding:28px;min-height:210px}.feature .num{font-family:Oswald;color:#4f5854;font-size:42px}.feature h4{font-size:16px;margin:22px 0 8px}.feature p{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.price-card{background:#101311;border:1px solid var(--line);padding:30px}.price-card.hot{border-color:#6e7f21;background:linear-gradient(145deg,#151a13,#0e1110)}.price-card h3{font-family:Oswald;text-transform:uppercase;font-size:28px;margin:0 0 12px}.price-card .big{font-size:36px;font-weight:800;margin:20px 0}.price-card ul{list-style:none;padding:0;margin:0;color:#aeb5b1;line-height:2;font-size:13px}.price-card li:before{content:"✓";color:var(--lime);margin-right:9px}.price-card .btn{margin-top:25px;width:100%}
+.tours{display:grid;grid-template-columns:1fr 1fr;gap:14px}.tour{min-height:390px;padding:30px;display:flex;align-items:flex-end;position:relative;overflow:hidden;background-size:cover;background-position:center}.tour:nth-child(1){background-image:linear-gradient(transparent,#050606e8),url('https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=80')}.tour:nth-child(2){background-image:linear-gradient(transparent,#050606e8),url('https://images.unsplash.com/photo-1473445361085-b9a07f55608b?auto=format&fit=crop&w=1400&q=80')}.tour h3{font-family:Oswald;font-size:36px;text-transform:uppercase;margin:0 0 8px}.tour p{color:#c4c8c5;margin:0}.tour .tour-price{margin-top:14px;color:var(--lime);font-weight:800}
+.gift{background:var(--lime);color:#0a0c0b;padding:65px;display:grid;grid-template-columns:1.3fr .7fr;gap:30px;align-items:center}.gift h2{font-family:Oswald;text-transform:uppercase;font-size:clamp(45px,6vw,80px);line-height:.9;margin:0}.gift p{font-weight:700;line-height:1.6}.gift .btn{background:#0a0c0b;color:#fff;border-color:#0a0c0b}
+.faq{max-width:900px}.faq details{border-top:1px solid var(--line);padding:22px 0}.faq details:last-child{border-bottom:1px solid var(--line)}summary{cursor:pointer;font-weight:800;list-style:none;display:flex;justify-content:space-between}summary:after{content:"+";color:var(--lime);font-size:22px}.faq p{color:var(--muted);line-height:1.7;max-width:760px}
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:50px}.contact-box{border:1px solid var(--line);padding:35px}.contact-box h3{font-family:Oswald;text-transform:uppercase;font-size:36px;margin:0 0 20px}.contact-box p{color:var(--muted);line-height:1.7}.contact-line{padding:15px 0;border-bottom:1px solid var(--line);font-size:15px}.contact-line b{display:block;color:#fff;margin-bottom:4px}.contact-line a{color:var(--lime)}form{display:grid;gap:12px}input,textarea{width:100%;border:1px solid var(--line);background:#0e1110;color:#fff;padding:16px;outline:none;border-radius:3px}input:focus,textarea:focus{border-color:var(--lime)}textarea{min-height:120px;resize:vertical}
+footer{border-top:1px solid var(--line);padding:35px 0;color:#777f7b;font-size:12px}.footer-inner{display:flex;justify-content:space-between;gap:20px}
+.modal{position:fixed;inset:0;background:#000b;display:none;place-items:center;z-index:100;padding:20px}.modal.open{display:grid}.modal-card{width:min(520px,100%);background:#101311;border:1px solid #303733;padding:32px}.modal-card h3{font-family:Oswald;font-size:40px;text-transform:uppercase;margin:0 0 8px}.close{float:right;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+@media(max-width:900px){.menu{display:none}.cards,.prices,.feature-grid{grid-template-columns:1fr 1fr}.grid2,.contact,.gift{grid-template-columns:1fr}.photo{min-height:440px}.tours{grid-template-columns:1fr}}
+@media(max-width:600px){.wrap{width:min(calc(100% - 28px),var(--max))}.hero{min-height:720px}.hero-content{padding-bottom:60px}.hero p{font-size:15px}section{padding:75px 0}.cards,.prices,.feature-grid{grid-template-columns:1fr}.section-head{display:block}.section-copy{margin-top:18px}.card{min-height:400px}.gift{padding:35px}.phone{font-size:12px}}
+</style>
+</head>
+<body>
+<div class="noise"></div>
+<header><div class="wrap nav">
+<a class="logo" href="#">MOTO<span>KVADRO</span>CLUB</a>
+<nav class="menu"><a href="#rides">Катание</a><a href="#advantages">Почему мы</a><a href="#tours">Туры</a><a href="#gift">Сертификат</a><a href="#contacts">Контакты</a></nav>
+<a class="phone" href="tel:+79253359901">+7 925 335 99 01</a>
+</div></header>
+
+<main>
+<section class="hero">
+<div class="wrap hero-content">
+<div class="eyebrow"><i class="dot"></i> Подмосковье · Лобня · 6 км от города</div>
+<h1>Грязь.<br>Газ.<br>Эмоции.</h1>
+<p>Квадроциклы, эндуро, питбайки и снегоходы. Живописные маршруты, инструктор, экипировка и фото/видео уже включены.</p>
+<div class="actions"><a class="btn primary" href="#rides">Выбрать катание</a><button class="btn" onclick="openModal('Записаться на заезд')">Забронировать</button></div>
+</div></section>
+
+<div class="ticker"><div class="ticker-track">ENDURO <span>✦</span> ATV <span>✦</span> PITBIKE <span>✦</span> TOURS <span>✦</span> PAINTBALL <span>✦</span> ADRENALINE <span>✦</span> ENDURO <span>✦</span> ATV <span>✦</span> PITBIKE <span>✦</span> TOURS <span>✦</span></div></div>
+
+<section id="rides"><div class="wrap">
+<div class="section-head"><div><div class="kicker">01 / Катание</div><h2 class="section-title">Выбери свою<br>стихию</h2></div><p class="section-copy">От первой поездки до грязевого маршрута. Группы формируются по уровню, перед стартом — полный инструктаж.</p></div>
+<div class="cards">
+<article class="card"><div class="card-content"><span class="tag">ATV / от 1 часа</span><h3>Квадроциклы</h3><p>Лайт-прогулка, динамичный маршрут или «Мега Экстрим». Леса, поля, колеи, овраги и броды.</p><div class="price">от 6 000 ₽/час</div></div></article>
+<article class="card"><div class="card-content"><span class="tag">ENDURO / PITBIKE</span><h3>Мотоциклы</h3><p>Живописные прогулки, бездорожье, индивидуальные заезды и обучение с нуля.</p><div class="price">от 4 000 ₽/час</div></div></article>
+<article class="card"><div class="card-content"><span class="tag">TEAM / FUN</span><h3>Пейнтбол</h3><p>Командная игра от 10 человек. Экипировка, инструктор и игровое поле включены.</p><div class="price">от 2 400 ₽/чел.</div></div></article>
+</div></div></section>
+
+<section id="advantages"><div class="wrap grid2">
+<div class="photo"></div>
+<div><div class="kicker">02 / МотоКвадроКлуб</div><h2 class="section-title">Новая техника.<br>Чистый драйв.</h2>
+<p class="section-copy">Парк техники обслуживается вовремя. Все группы сопровождает инструктор. Полный комплект защитной экипировки выдаём на месте.</p>
+<div class="facts"><div class="fact"><b>2025</b><small>год техники</small></div><div class="fact"><b>6 км</b><small>от Лобни</small></div><div class="fact"><b>7/7</b><small>работаем без выходных</small></div><div class="fact"><b>0 ₽</b><small>денежного залога</small></div></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="section-head"><div><div class="kicker">03 / Наш подход</div><h2 class="section-title">Всё включено</h2></div></div>
+<div class="feature-grid">
+<div class="feature"><div class="num">01</div><h4>Безопасность</h4><p>Инструктаж перед стартом и сопровождение профессионального инструктора.</p></div>
+<div class="feature"><div class="num">02</div><h4>Экипировка</h4><p>Шлем, подшлемник, грязезащитный костюм и обувь — предоставляем на месте.</p></div>
+<div class="feature"><div class="num">03</div><h4>Маршруты</h4><p>Разные уровни сложности: лес, поля, бездорожье, видовые точки и препятствия.</p></div>
+<div class="feature"><div class="num">04</div><h4>Медиа</h4><p>Фото и видеосъёмка входят в стоимость основных программ.</p></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="section-head"><div><div class="kicker">04 / Цены</div><h2 class="section-title">Квадроциклы</h2></div><p class="section-copy">Перед заездом обязательно записаться. Маршрут можно подобрать под опыт и формат отдыха.</p></div>
+<div class="prices">
+<div class="price-card"><h3>Лайт</h3><p class="section-copy">Для новичков и семейной прогулки.</p><div class="big">6 000 ₽<small>/ час</small></div><ul><li>тренировочная площадка</li><li>поле и лёгкий маршрут</li><li>инструктор</li><li>экипировка</li><li>фото и видео</li></ul><button class="btn" onclick="openModal('Квадроцикл — Лайт')">Выбрать</button></div>
+<div class="price-card hot"><h3>Динамичный</h3><p class="section-copy">Универсальный вариант для бездорожья.</p><div class="big">7 000 ₽<small>/ час</small></div><ul><li>лес и пересечённая местность</li><li>инструктор</li><li>экипировка</li><li>топливо включено</li><li>фото и видео</li></ul><button class="btn primary" onclick="openModal('Квадроцикл — Динамичный')">Выбрать</button></div>
+<div class="price-card"><h3>Мега Экстрим</h3><p class="section-copy">Самый грязевой и динамичный трек.</p><div class="big">8 500 ₽<small>/ час</small></div><ul><li>максимальная сложность</li><li>бездорожье и препятствия</li><li>инструктор</li><li>экипировка</li><li>фото и видео</li></ul><button class="btn" onclick="openModal('Квадроцикл — Мега Экстрим')">Выбрать</button></div>
+</div></div></section>
+
+<section id="tours"><div class="wrap"><div class="section-head"><div><div class="kicker">05 / Экспедиции</div><h2 class="section-title">Туры<br>дальше</h2></div><p class="section-copy">Однодневные и многодневные путешествия для тех, кому одного маршрута мало.</p></div>
+<div class="tours"><article class="tour"><div><h3>Гремячий ключ</h3><p>Около 10 часов внедорожной части маршрута, живописные места, обед на смотровой площадке.</p><div class="tour-price">35 000 ₽ с водителя</div></div></article>
+<article class="tour"><div><h3>Берега Киржача</h3><p>Двухдневное путешествие по самым живописным местам. Протяжённость маршрута — 180 км.</p><div class="tour-price">70 000 ₽ / квадроцикл</div></div></article></div></div></section>
+
+<section id="gift"><div class="wrap"><div class="gift"><div><div class="kicker" style="color:#253000">Подарок без лишних слов</div><h2>Подари<br>адреналин.</h2></div><div><p>Электронный сертификат отправим на email или WhatsApp. Бумажный вариант — в фирменном конверте.</p><button class="btn" onclick="openModal('Подарочный сертификат')">Получить сертификат</button></div></div></div></section>
+
+<section><div class="wrap"><div class="section-head"><div><div class="kicker">06 / Мото</div><h2 class="section-title">Эндуро<br>и питбайки</h2></div><p class="section-copy">Все цены ниже — с учётом маршрута, инструктажа, экипировки, сопровождения, топлива и фото/видео.</p></div>
+<div class="prices">
+<div class="price-card"><h3>Живописная прогулка</h3><div class="big">4 000 ₽<small>/ 1 час</small></div><ul><li>лес и красивые виды</li><li>подходит новичкам</li><li>мотоцикл / питбайк</li><li>инструктор и экипировка</li></ul></div>
+<div class="price-card hot"><h3>Бездорожье</h3><div class="big">7 000 ₽<small>/ 2 часа</small></div><ul><li>колеи, овраги, броды</li><li>грязь и скоростные участки</li><li>инструктор и экипировка</li><li>фото и видео</li></ul></div>
+<div class="price-card"><h3>Индивидуальный</h3><div class="big">9 000 ₽<small>/ 2 часа</small></div><ul><li>без группы</li><li>маршрут с инструктором</li><li>подбор сложности</li><li>максимум внимания</li></ul></div>
+</div></div></section>
+
+<section><div class="wrap"><div class="section-head"><div><div class="kicker">07 / FAQ</div><h2 class="section-title">Перед стартом</h2></div></div><div class="faq">
+<details open><summary>Нужен ли опыт?</summary><p>Нет. Большинство гостей раньше не водили технику. Инструктор проведёт подробный инструктаж и будет сопровождать группу.</p></details>
+<details><summary>Что взять с собой?</summary><p>Вся основная экипировка предоставляется. Рекомендуем взять сменную футболку и носки.</p></details>
+<details><summary>Есть ли залог?</summary><p>Для проката квадроцикла денежный залог не нужен. Нужен паспорт для оформления договора.</p></details>
+<details><summary>Можно ли приехать без записи?</summary><p>Перед приездом обязательно нужно записаться, чтобы мы подготовили технику и экипировку.</p></details>
+<details><summary>Что с предоплатой?</summary><p>Предоплата не возвращается. Возможен перенос даты. Если отмена сообщена менее чем за 3 дня до даты проката, предоплата также не возвращается.</p></details>
+</div></div></section>
+
+<section id="contacts"><div class="wrap"><div class="section-head"><div><div class="kicker">08 / Контакты</div><h2 class="section-title">До встречи<br>на трассе.</h2></div></div>
+<div class="contact">
+<div class="contact-box"><h3>Где мы</h3><div class="contact-line"><b>Адрес</b>Московская область, Дмитровский городской округ, посёлок совхоза Останкино</div><div class="contact-line"><b>GPS</b>56.063066, 37.403459</div><div class="contact-line"><b>Телефон</b><a href="tel:+79253359901">+7 925 335 99 01</a></div><div class="contact-line"><b>Связь</b>WhatsApp · Telegram</div><div class="actions" style="margin-top:25px"><a class="btn primary" target="_blank" href="https://yandex.ru/maps/?pt=37.403459,56.063066&z=14&l=map">Построить маршрут</a></div></div>
+<div class="contact-box"><h3>Записаться</h3><form onsubmit="sendForm(event)"><input id="name" required placeholder="Ваше имя"><input id="phone" required placeholder="Телефон"><textarea id="msg" placeholder="Что хотите забронировать?"></textarea><button class="btn primary" type="submit">Отправить заявку</button><small style="color:#777;line-height:1.5">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</small></form></div>
+</div></div></section>
+</main>
+<footer><div class="wrap footer-inner"><div>© МотоКвадроКлуб</div><div>Квадроциклы · Эндуро · Питбайки · Туры · Пейнтбол</div><div><a href="tel:+79253359901">+7 925 335 99 01</a></div></div></footer>
+
+<div class="modal" id="modal"><div class="modal-card"><button class="close" onclick="closeModal()">×</button><h3 id="modalTitle">Записаться</h3><p style="color:#aeb5b1">Оставьте телефон — администратор уточнит дату, количество участников и формат заезда.</p><form onsubmit="sendForm(event)"><input required placeholder="Ваше имя"><input required placeholder="Телефон"><button class="btn primary" type="submit">Оставить заявку</button></form></div></div>
+
+<script>
+function openModal(title){document.getElementById('modalTitle').textContent=title;document.getElementById('modal').classList.add('open')}
+function closeModal(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()})
+function sendForm(e){e.preventDefault();alert('Спасибо! Заявка подготовлена. Для фактической отправки подключите форму к вашему CRM/Telegram/почте. Телефон клуба: +7 925 335 99 01');e.target.reset();closeModal()}
+</script>
+</body>
+</html>
